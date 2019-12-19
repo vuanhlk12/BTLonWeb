@@ -17,3 +17,6 @@ Thêm từ excel:
 	 VD: UserName -> userName
 - Thêm xong user thì phải quay về "Chọn làm kì thi hiện tại" vì ban đầu mình chưa cho KyThiID vào user
 - Khi thêm môn học cho sinh viên thực chất là thêm các id vào bảng SV_MonThi_KiThi, tạo 1 file excel tương tự rồi thêm vào 
+
+In danh sách:
+- Cái này t chưa làm, có gì ông tìm thư viện rồi chạy thử luôn nhé
