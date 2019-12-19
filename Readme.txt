@@ -10,6 +10,8 @@ Cách thêm database:
 - Chạy các file query theo thứ tự
 - Thêm tài khoản admin, user để đăng nhập được
 - Thêm vài dữ liệu mẫu trước cũng đc, GUID thì generate ở web này: https://www.guidgenerator.com/online-guid-generator.aspx
+- Lấy connection string rồi sửa vào file Models/BTLonContext.cs. Ở dòng 34
+       optionsBuilder.UseSqlServer("{đặt connection string vào đây}");
 
 Thêm từ excel: 
 - Chỉ có trong Admin/Student
