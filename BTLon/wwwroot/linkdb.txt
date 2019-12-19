@@ -1,0 +1,6 @@
+Scaffold-DbContext "Data Source=VUANHPC\SQLEXPRESS;Initial Catalog=BTLon2;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+Data Source=vuanhlaptop;Initial Catalog=BTLon2;Integrated Security=True
+
+Data Source=VUANHLAPTOP\SQLEXPRESS;Initial Catalog=BTLon2;Integrated Security=True

@@ -1,0 +1,52 @@
+﻿@{
+	ViewData["Title"] = "Login Page";
+	Layout = "_LayoutLogin";
+}
+@section Scripts {
+	<script>
+		$(document).ready(function () {
+			$('.mdb-select').formSelect();
+		});
+	</script>
+}
+
+<div class="main-container">
+	<div class="row">
+		<form asp-controller="Login" asp-action="Login" class="login-wrapper" method="post">
+			<div class="header">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Login</h3>
+						<p>Fill out the form below to login.</p>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<input class="input col-md-12 col-sm-12" id="" name="username"  type="text" placeholder="Username">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<input class="input col-md-12 col-sm-12" id="" name="password"  type="password" placeholder="Password">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<select class="col-md-12 col-sm-12 mdb-select md-form" name="role">
+							<option value=0>Admin</option>
+							<option value=1>User</option>
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div class="actions">
+				<button type="submit"  class="btn btn-danger">Login</button>
+				<a class="link" href="#">Forgot Password?</a>
+				<div class="clearfix"></div>
+			</div>
+		</form>
+	</div>
+</div>

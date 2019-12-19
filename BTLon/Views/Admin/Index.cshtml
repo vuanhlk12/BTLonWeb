@@ -1,0 +1,384 @@
+﻿@{
+	ViewData["Title"] = "Home Page Admin";
+	Layout = "_LayoutAdmin";
+}
+
+@section Scripts {
+	<script src="~/js/admin/Manager.js"></script>
+
+}
+<div class="dashboard-wrapper">
+
+	<!-- Page title start -->
+	<div class="page-title clearfix">
+		<h2>
+			Quản lý thi
+			<small>
+				<ul id="directory">
+					<li>Quản lý</li>
+				</ul>
+			</small>
+		</h2>
+		<ul class="stats hidden-xs">
+			<li class="ruby-red-bg">
+				<span class="fs1" aria-hidden="true" data-icon=""></span>
+				<div class="details">
+					<span class="big">Ireland</span>
+					<span class="small">Current Location</span>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+	<!-- Row start -->
+	<div class="row" id="KyThiRow">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="widget-header">
+					<div class="title">
+						<button class=" btn btn-danger btn-sm" id="back" disabled="true">&laquo; Back</button>
+						<span class="fs1" aria-hidden="true"></span> Kì thi
+					</div>
+				</div>
+				<div class="widget-body">
+					<div id="dt_example" class="example_alt_pagination">
+						<div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
+							<div id="data-table_length" class="dataTables_length">
+								<label>
+									Show
+									<select size="1" name="data-table_length" aria-controls="data-table">
+										<option value="5" selected="selected">5</option>
+										<option value="10">10</option>
+										<option value="25">25</option>
+										<option value="50">50</option>
+										<option value="100">100</option>
+									</select>
+									<button class="btn btn-info btn-sm" id="show">Xem</button>
+									<button class="btn btn-outline-primary btn-sm" id="add">Thêm</button>
+									<button class=" btn btn-outline-danger btn-sm" id="delete">Xóa</button>
+									<button class=" btn btn-outline-danger btn-sm" id="set">Chọn làm kỳ thi hiện tại</button>
+								</label>
+							</div><div class="dataTables_filter" id="data-table_filter"><label>Search: <input type="text" aria-controls="data-table"></label></div><table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table" aria-describedby="data-table_info">
+								<table class="table table-bordered table-hover" id="KyThiTable">
+									<thead class="thead-light">
+										<tr>
+											<th name="kyThiIdFake"> Mã kì thi</th>
+											<th name="kyThiName">Tên kì thi</th>
+										</tr>
+									</thead>
+									<tbody class="table-striped">
+									</tbody>
+								</table>
+
+							</table><div class="dataTables_info" id="data-table_info">Showing 1 to 5 of 16 entries</div><div class="dataTables_paginate paging_full_numbers" id="data-table_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="data-table_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="data-table_previous">Previous</a><span><a tabindex="0" class="paginate_active">1</a><a tabindex="0" class="paginate_button">2</a><a tabindex="0" class="paginate_button">3</a><a tabindex="0" class="paginate_button">4</a></span><a tabindex="0" class="next paginate_button" id="data-table_next">Next</a><a tabindex="0" class="last paginate_button" id="data-table_last">Last</a></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" id="CaThiRow" style="display: none;">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="widget-header">
+					<div class="title">
+						<button class=" btn btn-danger btn-sm" id="back">&laquo; Back</button>
+						<span class="fs1" aria-hidden="true"></span> Ca thi
+					</div>
+				</div>
+				<div class="widget-body">
+					<div id="dt_example" class="example_alt_pagination">
+						<div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
+							<div id="data-table_length" class="dataTables_length">
+								<label>
+									Show
+									<select size="1" name="data-table_length" aria-controls="data-table">
+										<option value="5" selected="selected">5</option>
+										<option value="10">10</option>
+										<option value="25">25</option>
+										<option value="50">50</option>
+										<option value="100">100</option>
+									</select>
+									<button class="btn btn-info btn-sm" id="show">Xem</button>
+									<button class="btn btn-outline-primary btn-sm" id="add">Thêm</button>
+									<button class=" btn btn-outline-danger btn-sm" id="delete">Xóa</button>
+								</label>
+							</div><div class="dataTables_filter" id="data-table_filter"><label>Search: <input type="text" aria-controls="data-table"></label></div><table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table" aria-describedby="data-table_info">
+								<table class="table table-bordered table-hover" id="CaThiTable">
+									<thead class="thead-light">
+										<tr>
+											<th name="caThiIdFake"> Mã ca thi</th>
+											<th name="caThiName"> Tên ca thi</th>
+											<th name="date">Ngày</th>
+											<th name="start">Bắt đầu</th>
+											<th name="stop">Kết thúc</th>
+										</tr>
+									</thead>
+									<tbody class="table-striped">
+									</tbody>
+								</table>
+
+							</table><div class="dataTables_info" id="data-table_info">Showing 1 to 5 of 16 entries</div><div class="dataTables_paginate paging_full_numbers" id="data-table_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="data-table_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="data-table_previous">Previous</a><span><a tabindex="0" class="paginate_active">1</a><a tabindex="0" class="paginate_button">2</a><a tabindex="0" class="paginate_button">3</a><a tabindex="0" class="paginate_button">4</a></span><a tabindex="0" class="next paginate_button" id="data-table_next">Next</a><a tabindex="0" class="last paginate_button" id="data-table_last">Last</a></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" id="SubjectRow" style="display: none;">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="widget-header">
+					<div class="title">
+						<button class=" btn btn-danger btn-sm" id="back">&laquo; Back</button>
+						<span class="fs1" aria-hidden="true"></span> Môn học
+					</div>
+				</div>
+				<div class="widget-body">
+					<div id="dt_example" class="example_alt_pagination">
+						<div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
+							<div id="data-table_length" class="dataTables_length">
+								<label>
+									Show
+									<select size="1" name="data-table_length" aria-controls="data-table">
+										<option value="5" selected="selected">5</option>
+										<option value="10">10</option>
+										<option value="25">25</option>
+										<option value="50">50</option>
+										<option value="100">100</option>
+									</select>
+									<button class="btn btn-info btn-sm" id="show">Xem </button>
+									<button class="btn btn-outline-primary btn-sm" id="add">Thêm</button>
+									<button class=" btn btn-outline-danger btn-sm" id="delete">Xóa</button>
+								</label>
+							</div><div class="dataTables_filter" id="data-table_filter"><label>Search: <input type="text" aria-controls="data-table"></label></div><table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table" aria-describedby="data-table_info">
+								<table class="table table-bordered table-hover" id="SubjectTable">
+									<thead class="thead-light">
+										<tr>
+											<th name="monThiIdFake"> Mã môn học</th>
+											<th name="monThiName">Tên môn học</th>
+											<th name="giaoVien">Giảng viên</th>
+										</tr>
+									</thead>
+									<tbody class="table-striped">
+									</tbody>
+								</table>
+
+							</table><div class="dataTables_info" id="data-table_info">Showing 1 to 5 of 16 entries</div><div class="dataTables_paginate paging_full_numbers" id="data-table_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="data-table_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="data-table_previous">Previous</a><span><a tabindex="0" class="paginate_active">1</a><a tabindex="0" class="paginate_button">2</a><a tabindex="0" class="paginate_button">3</a><a tabindex="0" class="paginate_button">4</a></span><a tabindex="0" class="next paginate_button" id="data-table_next">Next</a><a tabindex="0" class="last paginate_button" id="data-table_last">Last</a></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ClassroomRow" class="row" style="display: none;">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="widget-header">
+					<div class="title">
+						<button class=" btn btn-danger btn-sm" id="back">&laquo; Back</button>
+						<span class="fs1" aria-hidden="true"></span> Phòng học
+					</div>
+				</div>
+				<div class="widget-body">
+					<div id="dt_example" class="example_alt_pagination">
+						<div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
+							<div id="data-table_length" class="dataTables_length">
+								<label>
+									Show
+									<select size="1" name="data-table_length" aria-controls="data-table">
+										<option value="5" selected="selected">5</option>
+										<option value="10">10</option>
+										<option value="25">25</option>
+										<option value="50">50</option>
+										<option value="100">100</option>
+									</select>
+									<button class="btn btn-info btn-sm" id="show">Xem danh sách sinh viên </button>
+									<button class="btn btn-outline-primary btn-sm" id="add">Thêm</button>
+									<button class=" btn btn-outline-danger btn-sm" id="delete">Xóa</button>
+								</label>
+							</div><div class="dataTables_filter" id="data-table_filter"><label>Search: <input type="text" aria-controls="data-table"></label></div><table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table" aria-describedby="data-table_info">
+								<table class="table table-bordered table-hover" id="ClassroomTable">
+									<thead class="thead-light">
+										<tr>
+											<th name="phongThiName">Tên phòng thi</th>
+											<th name="computerNumber">Số lượng máy tính</th>
+										</tr>
+									</thead>
+									<tbody class="table-striped">
+									</tbody>
+								</table>
+
+							</table><div class="dataTables_info" id="data-table_info">Showing 1 to 5 of 16 entries</div><div class="dataTables_paginate paging_full_numbers" id="data-table_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="data-table_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="data-table_previous">Previous</a><span><a tabindex="0" class="paginate_active">1</a><a tabindex="0" class="paginate_button">2</a><a tabindex="0" class="paginate_button">3</a><a tabindex="0" class="paginate_button">4</a></span><a tabindex="0" class="next paginate_button" id="data-table_next">Next</a><a tabindex="0" class="last paginate_button" id="data-table_last">Last</a></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal start -->
+	<div class="modal fade" id="KyThiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Thêm ca thi</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>Mã kỳ thi</label>
+						<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nhập mã kỳ thi" name="kyThiIdFake">
+					</div>
+					<div class="form-group">
+						<label>Tên kỳ thi</label>
+						<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nhập tên kỳ thi" name="KyThiName">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="save">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="CaThiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Thêm ca thi</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>Mã ca thi</label>
+						<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nhập mã ca thi" name="CaThiIdFake">
+					</div>
+					<div class="form-group">
+						<label>Tên ca thi</label>
+						<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nhập tên ca thi" name="CaThiName">
+					</div>
+					<div class="form-group">
+						<label>Ngày thi</label>
+						<input type="date" class="form-control" aria-describedby="emailHelp" placeholder="Nhập ngày" name="Date">
+					</div>
+					<div class="form-group">
+						<label>Giờ bắt đầu</label>
+						<div class="input-group" name="start">
+							<input type="text" class="form-control" name="hour" placeholder="Giờ">
+							<input type="text" class="form-control" name="minute" placeholder="Phút">
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Giờ kết thúc</label>
+						<div class="input-group" name="stop">
+							<input type="text" class="form-control" name="hour" placeholder="Giờ">
+							<input type="text" class="form-control" name="minute" placeholder="Phút">
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="save">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="MonThiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Thêm môn thi</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table table-bordered table-hover" id="SubjectTableInModal">
+						<thead class="thead-light">
+							<tr>
+								<th name="monThiIdFake"> Mã môn học</th>
+								<th name="monThiName">Tên môn học</th>
+								<th name="giaoVien">Giảng viên</th>
+							</tr>
+						</thead>
+						<tbody class="table-striped">
+						</tbody>
+					</table>
+					<small id="emailHelp" class="form-text text-muted">Chọn môn thi để thêm vào ca thi hiện tại</small>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="save">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="PhongThiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Thêm phòng thi</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table table-bordered table-hover" id="ClassroomTableInModal">
+						<thead class="thead-light">
+							<tr>
+								<th name="phongThiName">Tên phòng</th>
+								<th name="computerNumber">Số lượng máy tính</th>
+							</tr>
+						</thead>
+						<tbody class="table-striped">
+						</tbody>
+					</table>
+					<small id="emailHelp" class="form-text text-muted">Chọn phòng thi để thêm vào môn thi - ca thi hiện tại</small>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="save">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="SinhVienModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Danh sách sinh viên</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table table-bordered table-hover" id="SinhVienTableInModal">
+						<thead class="thead-light">
+							<tr>
+								<th name="userIdfake"> Mã sinh viên</th>
+								<th name="name">Tên sinh viên</th>
+								<th name="birth">Ngày sinh</th>
+							</tr>
+						</thead>
+						<tbody class="table-striped">
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="save">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

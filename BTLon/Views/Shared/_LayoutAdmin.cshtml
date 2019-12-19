@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - BTLon</title>
+	<script src="~/js/html5-trunk.js"></script>
+	<link href="~/icomoon/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link href="~/css/main.css" rel="stylesheet" />
+</head>
+<body>
+
+	<header>
+
+		<!-- Logo start -->
+		<div class="logo">
+			S<span>lick</span>
+		</div>
+		<!-- Logo end -->
+		<!-- Optional Dropdown start -->
+		<div id="optional-dropdown">
+			<ul>
+				<li>
+					<a href="index.html" data-original-title="" title="">
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- Optional Dropdown end -->
+		<!-- Search bar start -->
+		<div class="custom-search hidden-phone">
+			<input type="text" class="search-query">
+			<button data-original-title="" title=""> <span class="fs1" aria-hidden="true" data-icon=""></span></button>
+		</div>
+		<!-- Search bar end -->
+		<!-- Mini navigation start -->
+		<div id="mini-nav" class="hidden-phone">
+			<ul>
+				<li class="hidden-sm">
+					<a href="maps.html" data-original-title="" title="">
+						Dropdown
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+						<span class="count-label">7</span>
+					</a>
+					<ul>
+						<li>
+							<a href="maps.html" data-original-title="" title=""><span class="fs1" aria-hidden="true" data-icon=""></span> Maps</a>
+						</li>
+						<li>
+							<a href="invoice.html" data-original-title="" title=""><span class="fs1" aria-hidden="true" data-icon=""></span> Invoice</a>
+						</li>
+					</ul>
+				</li>
+				<li class="hidden-sm">
+					<a href="maps.html" data-original-title="" title="">
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+						<span class="count-label">6</span>
+					</a>
+					<ul>
+						<li>
+							<a href="maps.html" data-original-title="" title=""><span class="fs1" aria-hidden="true" data-icon=""></span> Maps</a>
+						</li>
+					</ul>
+				</li>
+				<li class="hidden-sm">
+					<a href="mail.html" data-original-title="" title="">
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+						<span class="count-label">5</span>
+					</a>
+					<ul>
+						<li>
+							<a href="mail.html" data-original-title="" title=""><span class="fs1" aria-hidden="true" data-icon=""></span> Messages</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a asp-controller="Login" asp-action="Logout" data-original-title="" title="">
+						<span class="text-label">Admin </span><span class="fs1" aria-hidden="true" data-icon=""></span>
+					</a>
+					<ul class="user-summary">
+						<li>
+							<div class="summary">
+								<div class="user-pic">
+									<img src="~/img/avatar-1.png" alt="Slick Admin" />
+								</div>
+								<div class="basic-details">
+									<h4 class="no-margin">Johnny</h4>
+									<h5 class="no-margin">UX Designer</h5>
+									<small>Garabandha, India</small>
+								</div>
+								<div class="profile-progress">
+									<div class="chart-progress easyPieChart" data-percent="68" style="width: 64px; height: 64px; line-height: 64px;">
+										68%
+										<canvas width="64" height="64"></canvas>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</li>
+						<li>
+							<a class="btn btn-xs btn-danger pull-right" asp-controller="Login" asp-action="Logout" data-original-title="" title="">Logout</a>
+							<span class="clearfix"></span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- Mini navigation end -->
+
+	</header>
+
+	<div class="main-container">
+		<div class="sidebar hidden-xs">
+			<div class="user-profile-pic">
+				<img src="~/img/avatar-1.png" alt="Slick Admin" />
+			</div>
+			<ul class="slick-menu">
+				<li class="@(@ViewData["Title"].ToString() == "Home Page Admin" ? "active" : "")">
+					<a asp-controller="Admin" asp-action="Index" data-original-title="" title="">
+						@if (@ViewData["Title"].ToString() == "Home Page Admin")
+						{
+							<div class="current-page"></div>
+						}
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+						<strong>Quản lý thi</strong>
+					</a>
+				</li>
+				<li class="@(@ViewData["Title"].ToString() == "Student" ? "active" : "")">
+					<a asp-controller="Admin" asp-action="Student" data-original-title="" title="">
+						@if (@ViewData["Title"].ToString() == "Student")
+						{
+							<div class="current-page"></div>
+						}
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+						<strong>Sinh viên</strong>
+					</a>
+				</li>
+				<li class="@(@ViewData["Title"].ToString() == "Subject" ? "active" : "")">
+					<a asp-controller="Admin" asp-action="Subject" data-original-title="" title="">
+						@if (@ViewData["Title"].ToString() == "Subject")
+						{
+							<div class="current-page"></div>
+						}
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+						<strong>Môn học</strong>
+					</a>
+				</li>
+				<li class="@(@ViewData["Title"].ToString() == "Classroom" ? "active" : "")">
+					<a asp-controller="Admin" asp-action="Classroom" data-original-title="" title="">
+						@if (@ViewData["Title"].ToString() == "Classroom")
+						{
+							<div class="current-page"></div>
+						}
+						<span class="fs1" aria-hidden="true" data-icon=""></span>
+						<strong>Phòng học</strong>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/jquery.printElement.js"></script>
+	<script src="~/js/xlsx.full.min.js"></script>
+	<script src="~/js/printThis.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@RenderSection("Scripts", required: false)
+</body>
+</html>
